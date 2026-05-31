@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURELIA STUDIO — Objects for Intentional Living</title>
+  <meta name="description" content="AURELIA creates refined home objects, scent rituals, and interior pieces shaped by natural materials, silence, and proportion.">
+  <meta name="theme-color" content="#080807">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Noscript fallback -->
+  <noscript>
+    <style>
+      #intro-overlay { display: none !important; }
+      #main-site { visibility: visible !important; opacity: 1 !important; pointer-events: auto !important; }
+      .scroll-reveal { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ============================================ -->
+  <!-- INTRO / LOADING EXPERIENCE -->
+  <!-- ============================================ -->
+  <div id="intro-overlay">
+    <canvas id="intro-canvas"></canvas>
+    <div id="intro-content">
+      <div class="intro-line">
+        <span class="intro-letter" style="--delay:0.05s">A</span>
+        <span class="intro-letter" style="--delay:0.12s">U</span>
+        <span class="intro-letter" style="--delay:0.19s">R</span>
+        <span class="intro-letter" style="--delay:0.26s">E</span>
+        <span class="intro-letter" style="--delay:0.33s">L</span>
+        <span class="intro-letter" style="--delay:0.40s">I</span>
+        <span class="intro-letter" style="--delay:0.47s">A</span>
+      </div>
+      <div class="intro-line">
+        <span class="intro-letter" style="--delay:0.60s">S</span>
+        <span class="intro-letter" style="--delay:0.67s">T</span>
+        <span class="intro-letter" style="--delay:0.74s">U</span>
+        <span class="intro-letter" style="--delay:0.81s">D</span>
+        <span class="intro-letter" style="--delay:0.88s">I</span>
+        <span class="intro-letter" style="--delay:0.95s">O</span>
+      </div>
+      <p class="intro-tagline" style="--delay:1.2s">Objects for intentional living</p>
+    </div>
+    <button id="skip-intro" aria-label="Skip intro animation">Skip</button>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- MAIN WEBSITE -->
+  <!-- ============================================ -->
+  <div id="main-site" class="hidden">
+
+    <!-- ============================================ -->
+    <!-- NAVIGATION -->
+    <!-- ============================================ -->
+    <nav id="navbar">
+      <a href="#hero" class="nav-logo">AURELIA</a>
+      <ul class="nav-links">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#consultation" class="nav-cta">Book Consultation</a>
+      <button id="mobile-menu-toggle" class="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-mobile">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Navigation Panel -->
+    <div id="main-nav-mobile" class="mobile-nav-panel" aria-hidden="true">
+      <ul class="nav-links-mobile">
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#journal">Journal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#consultation" class="nav-cta-mobile">Book Consultation</a>
+    </div>
+
+    <!-- ============================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================ -->
+    <section id="hero">
+      <div class="hero-slideshow">
+        <!-- Slide 1: Scent Vessels -->
+        <div class="hero-slide active" data-slide="0" id="hero-slide-0" role="tabpanel" aria-label="Slide 1: Scented Vessels">
+          <div class="hero-visual">
+            <div class="hero-glow"></div>
+            <div class="hero-product-stage">
+              <div class="product-stage-inner">
+                <div class="product-stage-gradient"></div>
+                <div class="hero-object hero-object--base"></div>
+                <div class="hero-object hero-object--stone"></div>
+                <div class="hero-object hero-object--vessel"></div>
+                <div class="hero-object hero-object--ceramic"></div>
+                <div class="hero-object hero-object--disc"></div>
+                <div class="product-stage-lines">
+                  <div class="stage-line" style="--i:1"></div>
+                  <div class="stage-line" style="--i:2"></div>
+                  <div class="stage-line" style="--i:3"></div>
+                  <div class="stage-line" style="--i:4"></div>
+                  <div class="stage-line" style="--i:5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Candles & Wax -->
+        <div class="hero-slide" data-slide="1" id="hero-slide-1" role="tabpanel" aria-label="Slide 2: Quiet Light from Natural Wax">
+          <div class="hero-visual">
+            <div class="hero-glow"></div>
+            <div class="hero-product-stage">
+              <div class="product-stage-inner">
+                <div class="product-stage-gradient"></div>
+                <div class="hero-object hero-object--base"></div>
+                <!-- Tall candle -->
+                <div class="slide-object slide-object--candle">
+                  <div class="slide-object--candle-wick"></div>
+                </div>
+                <!-- Small candle -->
+                <div class="slide-object slide-object--candle-small">
+                  <div class="slide-object--candle-wick"></div>
+                </div>
+                <!-- Wax block -->
+                <div class="slide-object slide-object--wax"></div>
+                <div class="product-stage-lines">
+                  <div class="stage-line" style="--i:1"></div>
+                  <div class="stage-line" style="--i:2"></div>
+                  <div class="stage-line" style="--i:3"></div>
+                  <div class="stage-line" style="--i:4"></div>
+                  <div class="stage-line" style="--i:5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: Diffuser & Oil -->
+        <div class="hero-slide" data-slide="2" id="hero-slide-2" role="tabpanel" aria-label="Slide 3: Room Perfume by Design">
+          <div class="hero-visual">
+            <div class="hero-glow"></div>
+            <div class="hero-product-stage">
+              <div class="product-stage-inner">
+                <div class="product-stage-gradient"></div>
+                <div class="hero-object hero-object--base"></div>
+                <!-- Diffuser bottle -->
+                <div class="slide-object slide-object--diffuser"></div>
+                <!-- Oil dropper -->
+                <div class="slide-object slide-object--dropper"></div>
+                <!-- Wood reeds -->
+                <div class="slide-object slide-object--reeds"></div>
+                <div class="product-stage-lines">
+                  <div class="stage-line" style="--i:1"></div>
+                  <div class="stage-line" style="--i:2"></div>
+                  <div class="stage-line" style="--i:3"></div>
+                  <div class="stage-line" style="--i:4"></div>
+                  <div class="stage-line" style="--i:5"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide dots + play/pause -->
+        <div class="hero-slideshow-controls" role="group" aria-label="Slide navigation">
+          <div class="hero-slideshow-dots" role="tablist" aria-label="Slides">
+            <button class="hero-dot active" data-goto="0" role="tab" aria-selected="true" aria-controls="hero-slide-0" aria-label="Slide 1: Scented Vessels"></button>
+            <button class="hero-dot" data-goto="1" role="tab" aria-selected="false" aria-controls="hero-slide-1" aria-label="Slide 2: Quiet Light from Natural Wax"></button>
+            <button class="hero-dot" data-goto="2" role="tab" aria-selected="false" aria-controls="hero-slide-2" aria-label="Slide 3: Room Perfume by Design"></button>
+          </div>
+          <button id="hero-toggle" class="hero-toggle" aria-label="Pause slideshow" data-state="playing">
+            <span class="hero-toggle-icon hero-toggle-pause">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor">
+                <rect x="0" y="0" width="4" height="14" rx="1"/>
+                <rect x="8" y="0" width="4" height="14" rx="1"/>
+              </svg>
+            </span>
+            <span class="hero-toggle-icon hero-toggle-play">
+              <svg width="12" height="14" viewBox="0 0 12 14" fill="currentColor">
+                <path d="M0 0L12 7L0 14V0Z"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-overlay">
+        <div class="hero-copy" id="hero-copy">
+          <p class="hero-eyebrow">New Collection 2026</p>
+          <h1 class="hero-title">
+            <span class="title-line">Scented Vessels</span>
+            <span class="title-line title-accent">for the Home</span>
+          </h1>
+          <p class="hero-desc">
+            Hand-blown glass vessels and ceramic diffusers designed to fragrance a room through presence, not perfume.
+          </p>
+          <div class="hero-actions">
+            <a href="#collection" class="btn-primary">Explore Collection</a>
+            <a href="#consultation" class="btn-secondary">Book Consultation</a>
+          </div>
+        </div>
+        <div class="hero-scroll-indicator">
+          <span>Scroll</span>
+          <div class="scroll-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- COLLECTION SECTION -->
+    <!-- ============================================ -->
+    <section id="collection">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-eyebrow scroll-reveal">The Collection</p>
+          <h2 class="section-title scroll-reveal">The Home<br>Fragrance Collection</h2>
+          <p class="section-sub scroll-reveal">
+            Vessels, candles, and diffusers designed to fragrance a space through material and form — not just scent.
+          </p>
+        </div>
+
+        <div class="collection-grid">
+          <!-- Category 1: Scent Vessels -->
+          <article class="collection-card scroll-reveal" data-index="0">
+            <div class="collection-visual">
+              <div class="collection-number">01</div>
+              <div class="collection-image-stage collection--scent">
+                <div class="stage-gradient"></div>
+                <div class="stage-accent"></div>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3>Scent Vessels</h3>
+              <p class="collection-desc">Hand-blown glass and ceramic vessels designed to hold fragrance oils, diffuser sticks, or taper candles. Each piece is numbered.</p>
+              <p class="collection-price">From $185</p>
+            </div>
+          </article>
+
+          <!-- Category 2: Wax Candles -->
+          <article class="collection-card scroll-reveal" data-index="1">
+            <div class="collection-visual">
+              <div class="collection-number">02</div>
+              <div class="collection-image-stage collection--stone">
+                <div class="stage-gradient"></div>
+                <div class="stage-accent"></div>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3>Wax Candles</h3>
+              <p class="collection-desc">Pure soy and beeswax candles poured into our own ceramic and stone vessels. Unscented or infused with cedar and amber.</p>
+              <p class="collection-price">From $120</p>
+            </div>
+          </article>
+
+          <!-- Category 3: Diffuser Oils -->
+          <article class="collection-card scroll-reveal" data-index="2">
+            <div class="collection-visual">
+              <div class="collection-number">03</div>
+              <div class="collection-image-stage collection--ritual">
+                <div class="stage-gradient"></div>
+                <div class="stage-accent"></div>
+              </div>
+            </div>
+            <div class="collection-info">
+              <h3>Diffuser Oils</h3>
+              <p class="collection-desc">Room fragrance oils formulated for specific spaces — bedrooms, living rooms, and quiet working areas. Sold with reed diffusers.</p>
+              <p class="collection-price">From $95</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PHILOSOPHY SECTION -->
+    <!-- ============================================ -->
+    <section id="philosophy">
+      <div class="split-layout">
+        <div class="split-visual scroll-reveal">
+          <div class="philosophy-visual">
+            <div class="philosophy-gradient"></div>
+            <div class="philosophy-accent"></div>
+          </div>
+        </div>
+        <div class="split-content">
+          <p class="section-eyebrow scroll-reveal">Philosophy</p>
+          <h2 class="section-title scroll-reveal">Designed for Rooms<br>That Breathe</h2>
+          <p class="split-text scroll-reveal">
+            We believe in restraint. Not emptiness — intention. Every object we create
+            should earn its place in a room by what it adds to the light, the silence,
+            the texture of a space.
+          </p>
+          <p class="split-text scroll-reveal">
+            Our materials are chosen for how they age. Brass that develops a warmer patina.
+            Stone that holds the memory of touch. Ceramic that reveals its handmade origin.
+            These are not products. They are quiet additions to how you live.
+          </p>
+          <div class="stats-row scroll-reveal">
+            <div class="stat"><strong>12</strong><span>Material Studies</span></div>
+            <div class="stat"><strong>4</strong><span>Artisan Partners</span></div>
+            <div class="stat"><strong>36</strong><span>Limited Pieces</span></div>
+            <div class="stat"><strong>1</strong><span>Design Language</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- MATERIALS SECTION -->
+    <!-- ============================================ -->
+    <section id="materials">
+      <div class="section-inner center">
+        <p class="section-eyebrow scroll-reveal">Materials</p>
+        <h2 class="section-title scroll-reveal">Tactile by Nature</h2>
+        <p class="section-sub scroll-reveal">
+          We work with materials that respond to time, touch, and light.
+          Each piece carries the character of its origin.
+        </p>
+
+        <div class="materials-grid">
+          <div class="material-card scroll-reveal">
+            <div class="material-visual material--oak">
+              <div class="material-gradient"></div>
+            </div>
+            <h3>Smoked Oak</h3>
+            <p>Darkened through natural smoke treatment, creating deep grain character</p>
+          </div>
+          <div class="material-card scroll-reveal">
+            <div class="material-visual material--travertine">
+              <div class="material-gradient"></div>
+            </div>
+            <h3>Travertine Stone</h3>
+            <p>Quarried and hand-finished, each piece carries unique mineral patterns</p>
+          </div>
+          <div class="material-card scroll-reveal">
+            <div class="material-visual material--brass">
+              <div class="material-gradient"></div>
+            </div>
+            <h3>Brushed Brass</h3>
+            <p>Living metal that develops a warm patina with handling and time</p>
+          </div>
+          <div class="material-card scroll-reveal">
+            <div class="material-visual material--ceramic">
+              <div class="material-gradient"></div>
+            </div>
+            <h3>Raw Ceramic</h3>
+            <p>Unglazed stoneware fired at high temperature, revealing natural texture</p>
+          </div>
+          <div class="material-card scroll-reveal">
+            <div class="material-visual material--linen">
+              <div class="material-gradient"></div>
+            </div>
+            <h3>Linen Paper</h3>
+            <p>Handmade paper pressed from long-fiber linen, developed for the studio</p>
+          </div>
+          <div class="material-card scroll-reveal">
+            <div class="material-visual material--glass">
+              <div class="material-gradient"></div>
+            </div>
+            <h3>Amber Glass</h3>
+            <p>Blown glass with mineral tint, developed exclusively for scent vessels</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROCESS SECTION -->
+    <!-- ============================================ -->
+    <section id="process">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-eyebrow scroll-reveal">Process</p>
+          <h2 class="section-title scroll-reveal">From Study<br>to Edition</h2>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step scroll-reveal" data-step="1">
+            <div class="step-line"></div>
+            <div class="step-content">
+              <h3>Research</h3>
+              <p>Every collection begins with material investigation — visiting quarries, workshops, and archives to understand what a material wants to become.</p>
+            </div>
+          </div>
+          <div class="process-step scroll-reveal" data-step="2">
+            <div class="step-line"></div>
+            <div class="step-content">
+              <h3>Material Study</h3>
+              <p>We work directly with artisans to develop finishes, forms, and processes that honor the material's natural character.</p>
+            </div>
+          </div>
+          <div class="process-step scroll-reveal" data-step="3">
+            <div class="step-line"></div>
+            <div class="step-content">
+              <h3>Prototype</h3>
+              <p>Each piece goes through 15 to 40 prototype iterations before final approval. Form, weight, and balance are tested by hand.</p>
+            </div>
+          </div>
+          <div class="process-step scroll-reveal" data-step="4">
+            <div class="step-line"></div>
+            <div class="step-content">
+              <h3>Final Edition</h3>
+              <p>Limited editions of 6 to 48 pieces, each numbered and accompanied by a material origin card.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- JOURNAL / EDITORIAL SECTION -->
+    <!-- ============================================ -->
+    <section id="journal">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-eyebrow scroll-reveal">Journal</p>
+          <h2 class="section-title scroll-reveal">Thoughts on Living</h2>
+        </div>
+
+        <div class="journal-grid">
+          <article class="journal-card scroll-reveal">
+            <div class="journal-image journal--empty">
+              <div class="journal-gradient"></div>
+            </div>
+            <div class="journal-content">
+              <span class="journal-category">Essay</span>
+              <h3>The Value of Empty Space</h3>
+              <p class="journal-excerpt">Why the most important design decision is what you choose not to place in a room.</p>
+              <a href="#" class="journal-link" data-coming-soon="essay-empty-space">Read More</a>
+            </div>
+          </article>
+
+          <article class="journal-card scroll-reveal">
+            <div class="journal-image journal--materials">
+              <div class="journal-gradient"></div>
+            </div>
+            <div class="journal-content">
+              <span class="journal-category">Materials</span>
+              <h3>Why Materials Age Better Than Trends</h3>
+              <p class="journal-excerpt">On designing objects that become more beautiful through use, not less.</p>
+              <a href="#" class="journal-link" data-coming-soon="essay-materials-age">Read More</a>
+            </div>
+          </article>
+
+          <article class="journal-card scroll-reveal">
+            <div class="journal-image journal--scent">
+              <div class="journal-gradient"></div>
+            </div>
+            <div class="journal-content">
+              <span class="journal-category">Scent</span>
+              <h3>Designing a Scent for a Room</h3>
+              <p class="journal-excerpt">How architecture, light, and materials should influence the way a space smells.</p>
+              <a href="#" class="journal-link" data-coming-soon="essay-scent-room">Read More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONSULTATION CTA SECTION -->
+    <!-- ============================================ -->
+    <section id="consultation">
+      <div class="section-inner">
+        <div class="cta-content">
+          <h2 class="section-title scroll-reveal">Begin With the Room<br>You Want to Feel</h2>
+          <p class="cta-text scroll-reveal">
+            For private clients, boutique hospitality spaces, and interior designers
+            seeking objects with atmosphere. We begin every collaboration with a
+            conversation about light, proportion, and how you want your space to feel.
+          </p>
+          <a href="#contact" class="btn-primary btn-large scroll-reveal">Book a Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CONTACT SECTION -->
+    <!-- ============================================ -->
+    <section id="contact">
+      <div class="section-inner">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <p class="section-eyebrow scroll-reveal">Contact</p>
+            <h2 class="section-title scroll-reveal">Start the<br>Conversation</h2>
+            <p class="split-text scroll-reveal">
+              Tell us about your space, your vision, or simply the feeling you are
+              trying to create. We will respond within two business days.
+            </p>
+            <div class="contact-details scroll-reveal">
+              <p><strong>Studio</strong><br>14bis Rue Keller, 75011 Paris</p>
+              <p><strong>Hours</strong><br>By appointment, Tuesday–Saturday</p>
+              <p><strong>Email</strong><br>hello@aureliastudio.com</p>
+            </div>
+          </div>
+          <form class="contact-form scroll-reveal" action="#" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="project">Project Type</label>
+              <select id="project" name="project">
+                <option value="">Select one</option>
+                <option value="private">Private residence</option>
+                <option value="hospitality">Boutique hospitality</option>
+                <option value="designer">Interior designer</option>
+                <option value="scent">Scent consultation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">Select range</option>
+                <option value="1k–5k">$1,000 – $5,000</option>
+                <option value="5k–15k">$5,000 – $15,000</option>
+                <option value="15k–50k">$15,000 – $50,000</option>
+                <option value="50k+">$50,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your space and what you're looking for..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo">AURELIA STUDIO</span>
+          <p>Objects for intentional living</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="#collection">Collection</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#materials">Materials</a>
+            <a href="#process">Process</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="#journal">Journal</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="footer-link-soon" data-coming-soon="instagram">Instagram</a>
+            <a href="#" class="footer-link-soon" data-coming-soon="newsletter">Newsletter</a>
+          </div>
+          <div class="footer-col">
+            <h4>Information</h4>
+            <a href="#" class="footer-link-soon" data-coming-soon="shipping">Shipping</a>
+            <a href="#" class="footer-link-soon" data-coming-soon="returns">Returns</a>
+            <a href="#" class="footer-link-soon" data-coming-soon="privacy">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>2026 AURELIA STUDIO. All rights reserved.</span>
+      </div>
+    </footer>
+
+  </div><!-- /#main-site -->
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
